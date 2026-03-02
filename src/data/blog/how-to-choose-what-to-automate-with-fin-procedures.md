@@ -5,15 +5,15 @@ date: 2026-03-02
 tags: [customer-support, ai, automation, fin, intercom]
 ---
 
-We rolled out Fin at Wingspan last quarter, and like every team that deploys an AI agent, we started with the wrong question.
+When we rolled out Fin at Wingspan, I knew the first question most teams ask is wrong.
 
 "What should we automate first?"
 
-Six weeks later we had twenty Procedures, a 40% automation rate, and a CSAT score that made me want to hide under my desk. We automated the wrong things. Fin was confidently giving wrong answers about refund eligibility and routing complex billing disputes to... itself, in an infinite loop.
+I'd seen what happens when you lead with that question. At previous companies, I watched teams spin up dozens of automations, hit a decent deflection rate, and then watch CSAT crater. AI confidently giving wrong answers about refund eligibility. Complex billing disputes routed to bots in infinite loops. The automation rate looked great on a dashboard and terrible in the inbox.
 
 Here's the thing about Fin's Procedures: they're powerful. You can teach Fin to pull data from your CRM via API connectors, execute branching logic with if/else conditions, enforce strict business rules with code blocks, and escalate when confidence thresholds aren't met. Fin's customer base reports resolution rates between 30-95% depending on implementation quality. Anthropic saved 1,700 support hours in a single month. But power without judgment just creates faster mistakes.
 
-I scrapped most of our early Procedures and started over with a framework. This is what actually works.
+So at Wingspan, I started with data instead. We looked at the most common questions our customers were actually asking, then identified where Fin was already falling short—questions it couldn't answer because it lacked the right data or connectors. That gave us a clear picture of what to build first and what to fix before building anything. From there, I developed a framework. This is what actually works.
 
 ## The Pre-Flight Check: Three Questions Before You Build
 
@@ -112,7 +112,7 @@ Most teams rush from Train to Deploy and skip the middle stages. Don't.
 Don't track "tickets handled by Fin." Track:
 
 - **Resolution rate without human touch** — Did Fin actually solve it, or just deflect? Quality implementations see 50-80% on simple workflows.
-- **CSAT on Fin-handled tickets** — Segmented by bucket type. I've seen 30% CSAT lifts when Fin handles the right tickets and hands off the rest gracefully.
+- **CX score on Fin-handled tickets** — Segmented by bucket type. I've seen 30% CX score lifts when Fin handles the right tickets and hands off the rest gracefully.
 - **Human override rate** — If agents constantly fix Fin's work, your Procedure is wrong.
 - **Reopen rate** — Did the customer have to ask again? Target under 5%.
 - **Time saved** — Anthropic's 1,700 hours in a month isn't typical, but it's directionally correct when you automate the right volume.
