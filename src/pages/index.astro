@@ -1,17 +1,46 @@
 ---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
 
+const posts = (await getCollection('blog', ({ data }) => {
+  return import.meta.env.PROD ? !data.draft : true;
+})).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base title="blog.thomas.town" description="Blog by Thomas Hils. Thoughts on CX, AI, automation, and building things.">
+  <main>
+    <section class="blog-hero crt">
+      <div class="container">
+        <h2 class="section__heading">
+          <span class="cmd">~/blog</span> <span class="path">$</span> ls -lt posts/
+        </h2>
+        <p class="blog-hero__tagline">
+          Thoughts on CX, AI, automation, and building things.<span class="cursor"></span>
+        </p>
+      </div>
+    </section>
+
+    <section class="container">
+      <ul class="post-list">
+        {posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.id}/`} class="post-card">
+              <div class="post-card__meta">
+                <span>{post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+              </div>
+              <h3 class="post-card__title">{post.data.title}</h3>
+              <p class="post-card__description">{post.data.description}</p>
+              {post.data.tags.length > 0 && (
+                <div class="post-card__tags">
+                  {post.data.tags.map((tag: string) => (
+                    <span class="tag">{tag}</span>
+                  ))}
+                </div>
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+</Base>

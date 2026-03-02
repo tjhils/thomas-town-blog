@@ -1,5 +1,5 @@
 {
-  "name": "peaceful-parallax",
+  "name": "thomas-town-blog",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,6 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.17.1"
+    "@astrojs/rss": "^4.0.15",
+    "astro": "^5.17.1",
+    "mdast-util-to-string": "^4.0.0",
+    "reading-time": "^1.5.0"
   }
 }
