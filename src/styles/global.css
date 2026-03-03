@@ -171,6 +171,15 @@ a:hover {
 }
 
 /* ===== Blog Index ===== */
+.blog-ascii {
+  font-family: var(--font-mono);
+  line-height: 1.15;
+  color: var(--accent-green);
+  white-space: pre;
+  margin-bottom: 24px;
+  font-size: clamp(0.65rem, 2.6vw, 1rem);
+}
+
 .blog-hero {
   padding: 60px 0 40px;
 }
