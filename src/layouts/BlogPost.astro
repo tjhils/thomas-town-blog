@@ -16,9 +16,37 @@ const formattedDate = date.toLocaleDateString('en-US', {
   month: 'long',
   day: 'numeric',
 });
+
+const isoDate = date.toISOString();
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "datePublished": isoDate,
+  "author": {
+    "@type": "Person",
+    "name": "Thomas Hils",
+    "url": "https://thomas.town"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Thomas Hils",
+    "url": "https://thomas.town"
+  },
+  "url": canonicalURL.href,
+  "keywords": tags.join(", "),
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalURL.href
+  }
+};
 ---
 
-<Base title={`${title} - blog.thomas.town`} description={description}>
+<Base title={`${title} - blog.thomas.town`} description={description} ogType="article" publishedDate={isoDate}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <main class="container">
     <div class="post-header">
       <a href="/" class="post-header__back">&larr; cd ~/blog</a>
