@@ -30,7 +30,7 @@ const posts = (await getCollection('blog', ({ data }) => {
       <ul class="post-list">
         {posts.map((post) => (
           <li>
-            <a href={`/blog/${post.id}/`} class="post-card">
+            <a href={`/post/${post.id}/`} class="post-card">
               <div class="post-card__meta">
                 <span>{post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
               </div>
