@@ -1,6 +1,6 @@
 ---
 title: "AI as a Thinking Partner"
-date: 2026-03-03
+date: 2026-03-04
 description: "How a Claude plugin called Ideation turned messy voice memos into structured project plans, and why it's useful far beyond software development."
 tags:
   - ai
