@@ -72,4 +72,4 @@ If this is resonating and you're a manager who doesn't have something like it, t
 
 Everything I built on top of that (the Claude integration, the QA tool, the structured vault) came from a year of noticing which habits stuck and which didn't. The doc-per-person is the part that earned its place first. The rest is scaffolding around that one habit.
 
-You don't need Claude or Obsidian or a custom tool to start. You probably have everything you need already. You just have to decide that your team's growth is the kind of thing worth writing down.
+You don't need my exact stack to start. Obsidian and Claude are what I reach for, but any second brain tool paired with an AI assistant will get you most of the way. The habit is the thing. The tools are how you keep doing it when you get busy. You just have to decide that your team's growth is worth writing down.
